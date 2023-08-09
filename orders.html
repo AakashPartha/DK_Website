@@ -1,45 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Items</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#22313A">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#22313A">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/assets/images/icons/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/assets/css/dkdraperyhardware.css">
+    <link rel="manifest" href="/manifest.json">
+    
     <style>
-        /* Add your custom CSS styles here */
+        /* Add your custom CSS styles here 
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
         }
         /* Add more styles as needed */
     </style>
+
+
+
+<title>DK Drapery Hardware | Orders</title>
 </head>
 <body>
+        
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/assets/images/icons/dklogo.png" alt="" width="auto" height="34" loading="lazy">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#darkNavbar" aria-controls="darkNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="darkNavbar">
+            <ul class="navbar-nav ml-auto">
+              
+              <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              
+              <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="/catalogs">Catalogs</a>
+              </li>
+              
+              <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="/window-treatment">Window Treatment</a>
+              </li>
+              
+              <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="/stores">Stores</a>
+              </li>
+      
+              <!-- Correctly change the link to the Orders Page-->
+              <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/orders">Orders</a>
+              </li>
+      
+            </ul>
+          </div>
+        </div>
+      </nav>
+
     <h1>Welcome to our Online Store!</h1>
     <p>Check out our fantastic selection of items below:</p>
+    <p>Scroll down to the bottom for instructions on measuring and installing shades.</p>
 
-    <!-- Replace the following section with your items available for order -->
-    <div class="item">
-        <h2>Item 1</h2>
-        <p>Description of Item 1.</p>
-        <p>Price: $X.XX</p>
+     <!-- Shade Ordering Section -->
+     <div class="shade-order">
+        <h2>Order Shades</h2>
         <form action="/order" method="post">
-            <input type="number" name="quantity_item_1" min="1" max="10" value="1">
+            <!-- Quantity -->
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+            <br>
+
+            <!-- Shade Type -->
+            <label for="shade-type">Choose Shade Type:</label>
+            <select id="shade-type" name="shade-type">
+                <option value="roller-shade">Roller Shade</option>
+                <option value="zebra-shade">Zebra Shade</option>
+            </select>
+            <br>
+
+            <!-- Fabric -->
+            <label for="fabric">Choose Fabric:</label>
+            <select id="fabric" name="fabric">
+                <option value="fabric-1">Fabric 1</option>
+                <option value="fabric-2">Fabric 2</option>
+                <!-- Add more fabric options -->
+            </select>
+            <br>
+
+            <!-- Dimensions -->
+            <label for="dimensions">Dimensions:</label>
+            <input type="text" id="dimensions" name="dimensions" placeholder="Width x Height">
+            <br>
+
+            <!-- Control Side -->
+            <label for="control-side">Choose Control Side:</label>
+            <select id="control-side" name="control-side">
+                <option value="right">Right</option>
+                <option value="left">Left</option>
+            </select>
+            <br>
+
+            <!-- Motorized -->
+            <label for="motorized">Motorized:</label>
+            <input type="checkbox" id="motorized" name="motorized">
+            <br>
+
+            <!-- Mounting -->
+            <label for="mounting">Mounting:</label>
+            <input type="radio" id="inside-mount" name="mounting" value="inside">
+            <label for="inside-mount">Inside Mount</label>
+            <input type="radio" id="outside-mount" name="mounting" value="outside">
+            <label for="outside-mount">Outside Mount</label>
+            <br>
+
+            <!-- Add to Cart Button -->
             <input type="submit" value="Add to Cart">
         </form>
     </div>
 
-    <div class="item">
-        <h2>Item 2</h2>
-        <p>Description of Item 2.</p>
-        <p>Price: $X.XX</p>
-        <form action="/order" method="post">
-            <input type="number" name="quantity_item_2" min="1" max="10" value="1">
-            <input type="submit" value="Add to Cart">
-        </form>
-    </div>
-
-    <!-- Add more items as needed -->
-
+    <!-- Shopping Cart and Checkout Section -->
     <h2>Your Shopping Cart</h2>
     <p>Review the items in your cart and proceed to checkout:</p>
     <div id="shopping-cart">
@@ -53,10 +142,50 @@
         <input type="submit" value="Place Order">
     </form>
 
-    <!-- Add additional sections, footer, or any other elements as required -->
+    <h1>How to measure:</h1>
+    <!-- Content for how to measure (video maybe) -->
+    <h1>How to install:</h1>
+    <!-- Content for how to install (video maybe)-->
 
-    <script>
-        // You can add JavaScript code here to enhance the functionality of the page
-    </script>
+    <!-- Add additional sections, footer, or any other elements as required -->
+    <footer>
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block">
+						<a href="/" class="mb-4 mt-4 d-inline-block"> <img src="/assets/images/icons/logo.png" alt="DK Drapery Hardware" width="100%" height="100%"> </a>
+						<ul class="list-inline footer-menu">
+							
+							<li class="list-inline-item">
+								<a href="/">Home</a>
+							</li>
+							
+							<li class="list-inline-item">
+								<a href="/products">Products</a>
+							</li>
+							
+							<li class="list-inline-item">
+								<a href="/manuals">Manuals</a>
+							</li>
+							
+							<li class="list-inline-item">
+								<a href="/info/about">About</a>
+							</li>
+							
+							<li class="list-inline-item">
+								<a href="/info/privacy-policy">Privacy Policy</a>
+							</li>
+							
+						</ul>
+						<p class="copyright-text">2022 | DK Drapery Hardware | CopyLeft | AML</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script src="/assets/js/darknesscode.js"></script>
 </body>
 </html>
